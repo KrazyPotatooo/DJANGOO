@@ -14,12 +14,12 @@
         </tr>
         {% for artist in object_list %}
         <tr>
-          <td>{{ artist.Artist_Name }}</td>
+          <td>{{ artist.nameofartist }}</td>
           <td>{{ artist.Song }}</td>
           <td>{{ artist.Email }}</td>
           <td>
-            <a href="{% url 'artist-update' artist.Artist_Name %}" >Edit</a> |
-              <a href="{% url 'artist-delete' artist.Artist_Name%}" >Delete</a>
+            <a href="{% url 'artist-update' artist.nameofartist %}" >Edit</a> |
+              <a href="{% url 'artist-delete' artist.nameofartist%}" >Delete</a>
           </td>
         </tr>
         {% empty %}

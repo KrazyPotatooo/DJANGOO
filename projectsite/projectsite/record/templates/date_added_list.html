@@ -7,19 +7,18 @@
     <table class="styled-table">
       <tbody>
         <tr>
-          <th>Artist</th>
+
           <th>Albums</th>
           <th>Date Added</th>
           <th>Action</th>
         </tr>
         {% for date_added in object_list %}
         <tr>
-          <td>{{ date_added.artist_name }}</td>
           <td>{{ date_added.albums_name}}</td>
-          <td>{{ date_added.date_added}}</td>
+          <td>{{ date_added.DateAdded}}</td>
           <td>
-            <a href="{% url 'date_added-update' date_added.artist_name %}">Edit</a> |
-            <a href="{% url 'date_added-delete' date_added.artist_name %}">Delete</a>
+            <a href="{% url 'date_added-update' date_added.artistID%}">Edit</a> |
+            <a href="{% url 'date_added-delete' date_added.artistID %}">Delete</a>
           </td>
         </tr>
         {% empty %}

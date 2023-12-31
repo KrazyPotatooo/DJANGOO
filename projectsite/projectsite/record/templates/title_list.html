@@ -17,12 +17,12 @@
         </tr>
         {% for title in object_list %}
         <tr>
-          <td>{{ title.song_name }}</td>
+          <td>{{ title.song_number }}</td>
           <td>{{ title.Artist}}</td>
           <td>{{ title.Email }}</td>
           <td>
-            <a href="{% url 'title-update' title.song_name%}">Edit</a> |
-            <a href="{% url 'title-delete' title.song_name %}">Delete</a>
+            <a href="{% url 'title-update' title.song_number%}">Edit</a> |
+            <a href="{% url 'title-delete' title.song_number%}">Delete</a>
           </td>
         </tr>
         {% empty %}

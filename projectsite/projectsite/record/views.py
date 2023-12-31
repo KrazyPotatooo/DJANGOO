@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .models import artist, duration, title, albums, date_added
-from .forms import artistForm,durationForm, titleForm,date_addedForm,albumsForm
+from .forms import artistForm, durationForm, titleForm, date_addedForm,albumsForm
 from django.urls import reverse_lazy
 
 
@@ -19,11 +19,11 @@ class HomePageView(ListView):
 class artistListView(ListView):
     model = artist
     template_name = 'artist_list.html'
-    context_object_name = 'artists'
+    context_object_name = 'artist'
     paginate_by = 5
 
     def get_queryset(self):
-        return artist.objects.all()
+        return artist.objects.all() 
     
 class artistCreateView(CreateView):
     model = artist

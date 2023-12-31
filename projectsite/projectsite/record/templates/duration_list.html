@@ -7,17 +7,19 @@
     <table class="styled-table">
       <tbody>
         <tr>
-          <th>Song Name</th>
+          
+          <th>Artist Name</th>
           <th>Duration</th>
           <th>Action</th>
         </tr>
         {% for duration in object_list %}
         <tr>
-          <td>{{ duration.Song_Name }}</td>
+          <td>{{ duration.artist_Names  }}</td>
+
           <td>{{ duration.Duration}}</td>
           <td>
-            <a href="{% url 'duration-update' duration.Song_Name %}">Edit</a> |
-            <a href="{% url 'duration-delete' duration.Song_Name %}">Delete</a>
+            <a href="{% url 'duration-update' duration.Song_ID%}">Edit</a> |
+            <a href="{% url 'duration-delete' duration.Song_ID %}">Delete</a>
           </td>
         </tr>
         {% empty %}
