@@ -3,8 +3,8 @@ from .models import artist, duration, title, albums, date_added
 
 @admin.register(artist)
 class artistAdmin(admin.ModelAdmin):
-    list_display = ("Artist_Name", "Song", "Email", "created_at", "updated_at")
-    search_fields = ("Artist_Name", "Song", "Email",)
+    list_display = ("Artist_ID", "Song", "Email", "created_at", "updated_at")
+    search_fields = ("Artist_ID", "Song", "Email",)
 
 @admin.register(duration)
 class durationAdmin(admin.ModelAdmin):
@@ -19,16 +19,26 @@ class TitleAdmin(admin.ModelAdmin):
     def get_artist(self, obj):
         return obj.artist.Artist_Name if hasattr(obj, 'artist') else ''
     get_artist.short_description = 'Artist'
+    
+@admin.register(albums)
 class albumsAdmin(admin.ModelAdmin):
-    list_display = ('Artist_Name', 'song_name', 'get_song_artist')  # Assuming 'song_artist' is a method in the model
-    search_fields = ("Artist_Name", "song_name", "song_artist")  # Adjusting search fields based on the model relationships
-    def get_song_artist(self, obj):
-        return obj.Songs_artist  # Replace with the correct field name in the albums model
-    get_song_artist.short_description = 'Song Artist'
+    list_display = ('get_music_albums_name', 'song_Name')  # Adjust this based on available fields
+
+    def get_music_albums_name(self, obj):
+        return obj.MusicAlbumsName_ID  # Replace this with the correct attribute/method
+
+    get_music_albums_name.short_description = 'Music Albums Name'
+
 
 
 
 @admin.register(date_added)
 class date_addedAdmin(admin.ModelAdmin):
-    list_display = ("artist_name", "albums_name", "DateAdded")  
-    search_fields = ("artist_name", "albums_name", "DateAdded")  # Using '__' for related fields
+    list_display = ('id', 'albums_name', 'song', 'DateAdded')
+
+    def get_artist_name(self, obj):
+        # Assuming 'song' references 'duration' and 'duration' has a foreign key to 'artist'
+        return obj.song.Duration.Artist.Artist_ScreenName if obj.song else ''
+    
+    get_artist_name.short_description = 'Artist'
+

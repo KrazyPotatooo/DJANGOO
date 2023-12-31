@@ -4,8 +4,8 @@ from django.shortcuts import render
 # myapp/views.py
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from record.models import artist, duration, title, albums, date_added
-from record.forms import artistForm,durationForm, titleForm,date_addedForm,albumsForm
+from .models import artist, duration, title, albums, date_added
+from .forms import artistForm,durationForm, titleForm,date_addedForm,albumsForm
 from django.urls import reverse_lazy
 
 

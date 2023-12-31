@@ -18,7 +18,7 @@
                     {% endif %}
                 </div>
                 <div class="card-name">
-                    <h2 class="sbs"> {{ artist.Artist_Name}}</h2>
+                    <h2 class="sbs"> {{ artist.Artist_ScreenName}}</h2>
                     <hr />
                 </div>
                 <table class="card-stats">
@@ -35,8 +35,13 @@
               <tr>
                 <th>Action:</th>
                 <td>
-                  <a href="{% url 'artist-update' artist.Artist_Name %}" >Edit</a> |
-                  <a href="{% url 'artist-delete' artist.Artist_Name %}" >Delete</a>
+                 <!-- Example link in a template -->
+                 <a href="{% url 'artist-update' pk=artist.pk %}">Edit</a>
+
+                    <!-- Example link in a template -->
+                    <a href="{% url 'artist-delete' pk=artist.pk %}">Delete</a>
+
+                    
                 </td>
               </tr>
             </tbody>
