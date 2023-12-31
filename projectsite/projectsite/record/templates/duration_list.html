@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<a href="{% url 'duration-add' %}" class="custom-btn btn btn-primary">Enter New Duration</a><br>
+<section class="trainers-container">
+    <table class="styled-table">
+      <tbody>
+        <tr>
+          <th>Song Name</th>
+          <th>Duration</th>
+          <th>Action</th>
+        </tr>
+        {% for duration in object_list %}
+        <tr>
+          <td>{{ duration.Song_Name }}</td>
+          <td>{{ duration.Duration}}</td>
+          <td>
+            <a href="{% url 'duration-update' duration.Song_Name %}">Edit</a> |
+            <a href="{% url 'duration-delete' duration.Song_Name %}">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+                <tr>
+                <td colspan="4" style="text-align: center;">
+                    <p>No Records Found</p>
+                </td>
+                </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</section>
+<div>
+    {% include 'includes/pagination.html' %}
+</div> 
+{% endblock %}
