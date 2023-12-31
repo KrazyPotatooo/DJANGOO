@@ -19,11 +19,14 @@ class TitleAdmin(admin.ModelAdmin):
     def get_artist(self, obj):
         return obj.artist.Artist_Name if hasattr(obj, 'artist') else ''
     get_artist.short_description = 'Artist'
-
-@admin.register(albums)
 class albumsAdmin(admin.ModelAdmin):
-    list_display = ("Artist_Name", "song_name", "song_artist") # Assuming 'ArtistName' and 'SongName' are correct field names
+    list_display = ('Artist_Name', 'song_name', 'get_song_artist')  # Assuming 'song_artist' is a method in the model
     search_fields = ("Artist_Name", "song_name", "song_artist")  # Adjusting search fields based on the model relationships
+    def get_song_artist(self, obj):
+        return obj.Songs_artist  # Replace with the correct field name in the albums model
+    get_song_artist.short_description = 'Song Artist'
+
+
 
 @admin.register(date_added)
 class date_addedAdmin(admin.ModelAdmin):
