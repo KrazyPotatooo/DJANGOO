@@ -13,14 +13,14 @@ class BaseModel(models.Model):
 
 class artist(BaseModel):
     Artist_ID = models.AutoField(primary_key=True)
-    Artist_name = models.CharField(max_length=100, default='') 
+    Artist_name = models.CharField(max_length=100, default='', null=True, blank=True)
     Song = models.CharField(max_length=255)
     Email = models.EmailField()
-    ProfileImage = models.ImageField(upload_to='media/',blank=True, null=True)
-    nameofartist = models.CharField(max_length=255)
-
+    ProfileImage = models.ImageField(upload_to='media/', blank=True, null=True)
+ 
     def __str__(self):
         return f"{self.Artist_ID} {self.Song}"
+
 
 class duration(BaseModel):
     Song_ID = models.AutoField(primary_key=True)

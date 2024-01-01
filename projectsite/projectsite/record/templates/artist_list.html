@@ -12,13 +12,13 @@
                 <div class="card-image" id="artist-img">
                     <!-- Check if the artist has a profile image -->
                     {% if artist.ProfileImage %}
-                        <img src="{{ artist.ProfileImage.url }}" alt="{{ artist.nameofartist}}Image">
+                        <img src="{{ artist.ProfileImage.url }}" alt="{{ artist.Artist_name}}Image">
                     {% else %}
                         <p>No image available</p>
                     {% endif %}
                 </div>
                 <div class="card-name">
-                    <h2 class="sbs"> {{ artist.NamesArtist}}</h2>
+                    <h2 class="sbs"> {{ artist.Artist_name}}</h2>
                     <hr />
                 </div>
                 <table class="card-stats">
