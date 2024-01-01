@@ -6,15 +6,16 @@
 }
 
 body {
-  /* background-color: #d3d3d3; */
-  background-image: url('../media/artistmusic.gif'); ;
-  background-size: cover; /* This property ensures the image covers the entire body */
+  background-image: url('file:///C:/Users/JOHN/Documents/DJANGOO/projectsite/projectsite/record/static/music.jpg');
+  background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Set the background position as fixed */
-  height: 100%;
+  background-attachment: fixed;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
+
+
 
 main {
   padding-top: 60px;

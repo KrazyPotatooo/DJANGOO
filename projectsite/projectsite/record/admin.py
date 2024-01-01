@@ -27,5 +27,5 @@ class albumsAdmin(admin.ModelAdmin):
 
 @admin.register(date_added)
 class date_addedAdmin(admin.ModelAdmin):
-    list_display = ("artistID", "albums_name", "song","DateAdded")  
-    search_fields = ("artistID", "albums_name", "song","DateAdded")  # Using '__' for related fields
+    list_display = ("artistID", "albums_name", "song")  
+    search_fields = ("artistID", "albums_name", "song")  # Using '__' for related fields

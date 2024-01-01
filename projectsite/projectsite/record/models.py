@@ -58,11 +58,6 @@ class date_added(models.Model):
     albums_name = models.CharField(max_length=255)  # Adding the 'albums' field
     song = models.CharField(max_length=255)
     DateAdded = models.DateField() 
-    artistNames=models.CharField(max_length=255)# Adding the 'DateAdded' field as a DateField
 
     def __str__(self):
         return str(self.artistID)  # Assuming ArtistName is an integer or ID
-
-    class Meta:
-        verbose_name_plural = "Date Added"  # Optional, sets the plural name for the model in the admin panel
-
