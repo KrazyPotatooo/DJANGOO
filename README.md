@@ -1,4 +1,4 @@
-Laboratory Final Exam
+Laboratory Final Exam Application Development and Emerging Technologies
 
 Create a Django application that implements at least five tables in a database. It should have one-to-many and many-to-many relationships. These field types should be available in your database: date, datetime, char, text, email, image, integer, and decimal. Models should inherit BaseModel, which consists of created_at and updated_at fields. Prepare the __str__ in every model.
 
