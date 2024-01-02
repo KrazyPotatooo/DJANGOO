@@ -6,11 +6,12 @@
 }
 
 body {
-  background-image: url('file:///C:/Users/JOHN/Documents/DJANGOO/projectsite/projectsite/record/static/music.jpg');
-  background-size: cover;
+  /* background-color: #d3d3d3; */
+  background-image: url('../images/music1.jpg');
+  background-size: cover; /* This property ensures the image covers the entire body */
   background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
+  background-attachment: fixed; /* Set the background position as fixed */
+  height: 100%;
   margin: 0;
   padding: 0;
 }
